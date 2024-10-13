@@ -1,0 +1,7 @@
+{
+  "name": "ImageApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
