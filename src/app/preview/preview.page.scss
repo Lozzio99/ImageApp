@@ -1,0 +1,30 @@
+.split-images {
+  display: flex;
+  flex-direction: column;
+
+  .image-row {
+    display: flex;
+    justify-content: center;
+
+    .image-container {
+      position: relative;
+      margin: 5px;
+
+      img {
+        display: block;
+        max-width: 100px;
+        max-height: 100px;
+        object-fit: cover;
+      }
+
+      .download-icon {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Preview</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="splitImagesGrid.length === 0">
+    <p>Processing image, please wait...</p>
+  </div>
+
+  <div *ngIf="splitImagesGrid.length > 0">
+    <p>Here are the split images:</p>
+    <div class="split-images">
+      <div class="image-row" *ngFor="let row of splitImagesGrid">
+        <div class="image-container" *ngFor="let imgSrc of row; let i = index">
+          <img [src]="imgSrc" [alt]="'Split Image ' + getImageIndex(row, i)" />
+          <img
+            class="download-icon"
+            src="assets/icon/download-icon-image.jpg"
+            (click)="downloadImage(imgSrc, getImageIndex(row, i))"
+            alt="Download"
+          />
+        </div>
+      </div>
+    </div>
+
+    <ion-button expand="full" (click)="goToResult()">Generate PDF</ion-button>
+  </div>
+</ion-content>

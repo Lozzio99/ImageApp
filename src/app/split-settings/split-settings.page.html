@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Split Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Number of Columns</ion-label>
+    <ion-input type="number" [(ngModel)]="numColumns"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Number of Rows</ion-label>
+    <ion-input type="number" [(ngModel)]="numRows"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="goToPreview()">Next</ion-button>
+</ion-content>

@@ -8,6 +8,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "electron": "npm run build && electron .",
+    "dist": "npm run build && electron-builder",
     "test": "ng test",
     "lint": "ng lint"
   },
@@ -21,13 +23,16 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "@capacitor/android": "6.1.2",
     "@capacitor/app": "6.0.1",
     "@capacitor/core": "6.1.2",
     "@capacitor/haptics": "6.0.1",
+    "@capacitor/ios": "6.1.2",
     "@capacitor/keyboard": "6.0.2",
     "@capacitor/status-bar": "6.0.1",
     "@ionic/angular": "^8.0.0",
     "ionicons": "^7.2.1",
+    "jspdf": "^2.5.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
@@ -47,6 +52,8 @@
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "electron": "^32.2.0",
+    "electron-builder": "^25.1.8",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.2.1",
@@ -60,5 +67,21 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.0"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+
+
+  "build": {
+    "appId": "com.imageapp.id",
+    "productName": "My Ionic Electron App",
+    "directories": {
+      "output": "dist_electron"
+    },
+    "files": [
+      "main.js",
+      "www/**/*"
+    ],
+    "extraMetadata": {
+      "main": "main.js"
+    }
+  }
 }
